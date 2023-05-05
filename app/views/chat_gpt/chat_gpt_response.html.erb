@@ -1,6 +1,5 @@
- <div class="container">
 <% @chat_gpt_results.each do |history| %>
-   
+    <div class="container">
         <div class="container__primary">
           <div class="container_primary_maincontainer">
             <div class="container_primary_img">
@@ -21,18 +20,18 @@
             </div>
           </div>
         </div>
-   
-  <% end %>
-  <div class="input_box">
-
-    <%= form_with url: "/chat_gpt", method: :post, style: "padding: 10px; background: #e5e5e5;" do |f| %>
-      <div class="form-group input_form">
-        <%= f.text_field :query,  class: "form-control" %>
-      </div>
-      <%= f.submit "Search", class: "btn btn-primary" %>
-      <%= f.submit "Clear", class: "btn btn-danger", formaction: clear_path %>
-
-    <% end %>
-
+    </div>
+<% end %>
+<form action="/chat_gpt" method ="post" style="padding: 10px; background: #e5e5e5;">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Search Input</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Search" name="search">
   </div>
- </div>
+  <button type="submit" class="btn btn-primary">Search</button>
+</form>
+<%# 
+<div class="button">
+    <% link_to "", new_todo_path %> do 
+        <button type="button" class="btn btn-primary">Clear History</button>
+    <% end %>
+</div> %>

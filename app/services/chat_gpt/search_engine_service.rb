@@ -6,7 +6,7 @@ class ChatGpt::SearchEngineService
 
     def perform
         if @text_input
-            api_key = "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"
+            api_key = "sk-o"
             return manage_search_result(api_key)
         else
             return "<p></p>"

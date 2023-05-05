@@ -10,5 +10,11 @@ class ChatGptController < ApplicationController
         ChatGptHistory.create!(search_text: input, search_result: response)
         redirect_to root_path
     end
+
+    def clear
+
+        ChatGptHistory.destroy_all
+        redirect_to root_path
+    end
 end
 
