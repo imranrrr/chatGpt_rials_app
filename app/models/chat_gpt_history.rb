@@ -1,0 +1,3 @@
+class ChatGptHistory < ApplicationRecord
+
+end
